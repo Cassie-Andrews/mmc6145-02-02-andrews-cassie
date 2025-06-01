@@ -10,7 +10,7 @@ export default function Header({time, bestTime, previousTime, isCounting, openMo
           <>
             {/* if time is running, show that, else if there's a previous time, show the previous time */}
             {
-              isCounting && time > 0
+              isCounting && time != null
               ? <strong>Time: {time}</strong>
               : previousTime != null && <strong>Previous: {previousTime}</strong>
             }
