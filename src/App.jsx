@@ -23,18 +23,33 @@ export default function App() {
     "Duck 🦆",
   ];
 
+  const handleGameStart = () => {
+
+  };
+
+  const handleGameEnd = () => {
+
+  };
+
   return (
     <>
       <Header
-        // add time, bestTime, previousTime props
+        // add time prop
+        time={time}
+        // add bestTime prop
+        bestTime={bestTime}
+        // add previousTime prop
+        previousTime={previousTime}
         openModal={() => setShowModal(true)}
       />
       <CardGame
-        // add onGameStart, onGameEnd props
+        // add onGameStart prop
+        onGameStart={handleGameStart}
+        // add onGameEnd prop
+        onGameEnd={handleGameEnd}
         cardTexts={cardTexts}
       />
       <Modal isShown={showModal} close={() => setShowModal(false)} />
     </>
   );
 }
-
