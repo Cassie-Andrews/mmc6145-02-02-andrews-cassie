@@ -6,6 +6,8 @@ import { useTimer } from "./util/customHooks";
 
 export default function App() {
   const [showModal, setShowModal] = useState(false);
+  const [previousTime, setPreviousTime] = useState(null);
+  const [bestTime, setBestTime] = useState(null);
 
   const {
     time,
@@ -24,11 +26,20 @@ export default function App() {
   ];
 
   const handleGameStart = () => {
-
+    // reset the timer
+    timerReset();
+    // start the timer
+    timerStart();
   };
 
   const handleGameEnd = () => {
-
+    // stop the timer
+    timerStop();
+    // save as previous time, handle best time
+    setPreviousTime(time);
+      if (bestTime === null || time < bestTime) {
+        setBestTime(time);
+      }
   };
 
   return (

@@ -12,9 +12,9 @@ export default function Header({time, bestTime, previousTime, openModal}) {
             {
               time > 0
               ? <strong>Time: {time}</strong>
-              : previousTime && <strong>Previous: {previousTime}</strong>
+              : previousTime != null && <strong>Previous: {previousTime}</strong>
             }
-            {bestTime && <strong>Best Time: {bestTime}</strong>}
+            {bestTime != null && <strong>Best Time: {bestTime}</strong>}
           </>
         }
         <button onClick={openModal}>
