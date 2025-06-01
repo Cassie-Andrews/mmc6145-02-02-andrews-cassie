@@ -14,6 +14,7 @@ export default function App() {
     start: timerStart,
     stop: timerStop,
     reset: timerReset,
+    isCounting
   } = useTimer();
 
   const cardTexts = [
@@ -40,6 +41,7 @@ export default function App() {
       if (bestTime === null || time < bestTime) {
         setBestTime(time);
       }
+    timerReset();
   };
 
   return (
@@ -51,6 +53,7 @@ export default function App() {
         bestTime={bestTime}
         // add previousTime prop
         previousTime={previousTime}
+        isCounting={isCounting}
         openModal={() => setShowModal(true)}
       />
       <CardGame

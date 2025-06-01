@@ -20,5 +20,5 @@ export function useTimer() {
   const stop = () => setIsCounting(false)
   const reset = () => setTime(0)
 
-  return {start, stop, reset, time}
+  return {start, stop, reset, time, isCounting}
 }
