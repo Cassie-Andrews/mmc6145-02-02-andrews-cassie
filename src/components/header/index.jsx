@@ -1,6 +1,6 @@
 import styles from './style.module.css'
 
-export default function Header({time, bestTime, previousTime, isCounting, openModal}) {
+export default function Header({time, bestTime, previousTime, openModal}) {
   return (
     <header className={styles.header}>
       <h1>Memory Game!</h1>
@@ -10,11 +10,11 @@ export default function Header({time, bestTime, previousTime, isCounting, openMo
           <>
             {/* if time is running, show that, else if there's a previous time, show the previous time */}
             {
-              isCounting && time != null
+              time > 0
               ? <strong>Time: {time}</strong>
-              : previousTime != null && <strong>Previous: {previousTime}</strong>
+              : previousTime && <strong>Previous: {previousTime}</strong>
             }
-            {bestTime != null && <strong>Best Time: {bestTime}</strong>}
+            {bestTime && <strong>Best Time: {bestTime}</strong>}
           </>
         }
         <button onClick={openModal}>
